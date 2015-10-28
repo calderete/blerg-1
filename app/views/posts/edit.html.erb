@@ -1,2 +1,17 @@
 <h2><%= @post.title %></h2>
+<%= simple_format(@post.content) %>
 <%= form_tag(post_path, method: :put) %>
+
+<div class="edit_field">
+    <%= label_tag "Edit Title" %>
+    <%= text_field_tag :title %>
+</div>
+
+<div class="edit_content">
+	<%= label_tag "Edit Body" %>
+	<%= text_area_tag :content %>
+</div>
+
+<%= submit_tag "Update!" %>
+
+<%= link_to "Cancel" %>
